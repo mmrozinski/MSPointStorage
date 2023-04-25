@@ -122,59 +122,47 @@ namespace PointTests
         [TestMethod]
         public void TestDistanceCalculation()
         {
-            // Arrange
             var point1 = new Point(1, 2, 3);
             var point2 = new Point(4, 5, 6);
             var expectedDistance = 5.196152422706632;
 
-            // Act
             var distance = Point.CalculateDistance(point1, point2);
 
-            // Assert
             Assert.AreEqual(expectedDistance, distance, 0.00000001);
         }
 
         [TestMethod]
         public void TestDistanceCalculationForSamePoint()
         {
-            // Arrange
             var point = new Point(1, 2, 3);
             var expectedDistance = 0;
 
-            // Act
             var distance = Point.CalculateDistance(point, point);
 
-            // Assert
             Assert.AreEqual(expectedDistance, distance);
         }
 
         [TestMethod]
         public void TestDistanceCalculationWithNegativeCoordinates()
         {
-            // Arrange
             var point1 = new Point(-1, -2, -3);
             var point2 = new Point(-4, -5, -6);
             var expectedDistance = 5.196152422706632;
 
-            // Act
             var distance = Point.CalculateDistance(point1, point2);
 
-            // Assert
             Assert.AreEqual(expectedDistance, distance, 0.00000001);
         }
 
         [TestMethod]
         public void TestDistanceCalculationWithLargeCoordinates()
         {
-            // Arrange
             var point1 = new Point(1000, 2000, 3000);
             var point2 = new Point(4000, 5000, 6000);
             var expectedDistance = 5196.152422706632;
 
-            // Act
             var distance = Point.CalculateDistance(point1, point2);
 
-            // Assert
             Assert.AreEqual(expectedDistance, distance, 0.00000001);
         }
     }
