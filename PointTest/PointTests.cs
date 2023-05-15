@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MSPointStorage;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -32,11 +33,11 @@ namespace PointTests
         {
 
             var points = new List<Point>
-        {
+            {
             new Point(1, 2, 3),
             new Point(4, 5, 6),
             new Point(7, 8, 9)
-        };
+            };
             var repository = new PointRepository(connectionString);
 
 
@@ -116,21 +117,6 @@ namespace PointTests
             var distance = Point.CalculateDistance(point1, point2);
 
 
-            Assert.AreEqual(expectedDistance, distance, 0.00000001);
-        }
-
-        [TestMethod]
-        public void TestDistanceCalculation()
-        {
-            // Arrange
-            var point1 = new Point(1, 2, 3);
-            var point2 = new Point(4, 5, 6);
-            var expectedDistance = 5.196152422706632;
-
-            // Act
-            var distance = Point.CalculateDistance(point1, point2);
-
-            // Assert
             Assert.AreEqual(expectedDistance, distance, 0.00000001);
         }
 

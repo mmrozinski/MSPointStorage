@@ -3,9 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSPointStorage", "MSPointStorage\MSPointStorage.csproj", "{DF903138-6042-4713-9B7E-FF0DAA7BC232}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSPointStorage", "MSPointStorage\MSPointStorage.csproj", "{DF903138-6042-4713-9B7E-FF0DAA7BC232}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointTest", "PointTest\PointTest.csproj", "{CAE5234A-3FEC-48AC-A234-AD2F9B87A9BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointTest", "PointTest\PointTest.csproj", "{CAE5234A-3FEC-48AC-A234-AD2F9B87A9BD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DF903138-6042-4713-9B7E-FF0DAA7BC232} = {DF903138-6042-4713-9B7E-FF0DAA7BC232}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
