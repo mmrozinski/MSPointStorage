@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointTest", "PointTest\Poin
 		{DF903138-6042-4713-9B7E-FF0DAA7BC232} = {DF903138-6042-4713-9B7E-FF0DAA7BC232}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointGUI", "PointGUI\PointGUI.csproj", "{4568F092-C576-475E-851C-CDEFB098DC82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{CAE5234A-3FEC-48AC-A234-AD2F9B87A9BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAE5234A-3FEC-48AC-A234-AD2F9B87A9BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAE5234A-3FEC-48AC-A234-AD2F9B87A9BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4568F092-C576-475E-851C-CDEFB098DC82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4568F092-C576-475E-851C-CDEFB098DC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4568F092-C576-475E-851C-CDEFB098DC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4568F092-C576-475E-851C-CDEFB098DC82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
