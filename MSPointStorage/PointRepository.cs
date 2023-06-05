@@ -11,10 +11,21 @@ namespace MSPointStorage
 {
     public class PointRepository
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public string ConnectionString { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string Name { get; set; }
         
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connectionString"></param>
+        /// <param name="name"></param>
         public PointRepository(string connectionString, string name)
         {
             ConnectionString = connectionString;
@@ -35,6 +46,10 @@ namespace MSPointStorage
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="point"></param>
         public void Save(Point point)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -54,6 +69,10 @@ namespace MSPointStorage
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pointList"></param>
         public void Save(List<Point> pointList)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -76,6 +95,10 @@ namespace MSPointStorage
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="point"></param>
         public void Update(Point point)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -95,6 +118,9 @@ namespace MSPointStorage
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void DeleteAll()
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -110,6 +136,10 @@ namespace MSPointStorage
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="point"></param>
         public void Delete(Point point)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -126,6 +156,9 @@ namespace MSPointStorage
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void DeleteRepository()
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -141,6 +174,11 @@ namespace MSPointStorage
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Point? GetById(int id)
         {
             int foundId;
@@ -174,6 +212,10 @@ namespace MSPointStorage
             return new Point(x, y, z, foundId);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<Point> GetAll()
         {
             List<Point> points = new List<Point>();
