@@ -1,0 +1,22 @@
+﻿<Window x:Class="PointGUI.AddPointWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PointGUI"
+        mc:Ignorable="d"
+        Title="AddPointWindow" Height="263" Width="199">
+    <Grid>
+        <TextBox x:Name="XCoordinateTextBox" Margin="94,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" PreviewTextInput="NumericTextInput" Width="50" HorizontalAlignment="Left"/>
+        <TextBox x:Name="YCoordinateTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" PreviewTextInput="NumericTextInput" Margin="94,120,0,0" Width="50" HorizontalAlignment="Left"/>
+        <TextBox x:Name="ZCoordinateTextBox" Margin="94,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" PreviewTextInput="NumericTextInput" Width="50" HorizontalAlignment="Left"/>
+        <TextBox x:Name="IdTextBox" Margin="94,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" PreviewTextInput="NumericTextInput" Width="50" HorizontalAlignment="Left"/>
+        <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="53,190,0,0" VerticalAlignment="Top" IsDefault="True" Click="AddButton_Click" RenderTransformOrigin="-0.651,0.825"/>
+        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="113,190,0,0" VerticalAlignment="Top" IsDefault="True" IsCancel="True"/>
+        <Label x:Name="IdLabel" Content="Id" HorizontalAlignment="Left" Margin="60,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="XCoordinateLabel" Content="X" HorizontalAlignment="Left" Margin="62,93,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="YCoordinateLabel" Content="Y" HorizontalAlignment="Left" Margin="62,116,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ZCoordinateLabel" Content="Z" HorizontalAlignment="Left" Margin="62,140,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

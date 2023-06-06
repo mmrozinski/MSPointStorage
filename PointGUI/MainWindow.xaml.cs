@@ -51,7 +51,11 @@ namespace PointGUI
 
         private void AddPointClick(object sender, RoutedEventArgs e)
         {
-            Points.Add(new MSPointStorage.Point(0, 0, 0));
+            AddPointWindow addPointWindow = new AddPointWindow();
+            if (addPointWindow.ShowDialog() == true)
+            {
+                Points.Add(addPointWindow.PointToAdd);
+            }
 
             PointListBox.Items.Refresh();
         }
