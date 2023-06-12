@@ -39,5 +39,15 @@ namespace MSPointStorage
         {
             return Math.Sqrt(Math.Pow(destination.X - origin.X, 2) + Math.Pow(destination.Y - origin.Y, 2) + Math.Pow(destination.Z - origin.Z, 2));
         }
+
+        public static double CalculateCubeVolume(Point vertex1, Point vertex2)
+        {
+            return Math.Abs(vertex1.X - vertex2.X) * Math.Abs(vertex1.Y - vertex2.Y) * Math.Abs(vertex1.Z - vertex2.Z);
+        }
+
+        public static bool IsInSphere(Point point, Point center, double radius)
+        {
+            return Point.CalculateDistance(point, center) <= radius;
+        }
     }
 }

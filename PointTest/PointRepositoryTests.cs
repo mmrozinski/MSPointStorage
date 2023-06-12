@@ -20,6 +20,7 @@ namespace PointTest
         public void Initialize()
         {
             repository = new PointRepository(connectionString, "Points");
+            repository.DeleteAll();
         }
 
         [TestCleanup]

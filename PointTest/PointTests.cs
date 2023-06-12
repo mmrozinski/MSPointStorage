@@ -3,6 +3,7 @@ using MSPointStorage;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.WebSockets;
 
 namespace PointTests
 {
@@ -57,6 +58,32 @@ namespace PointTests
             var distance = Point.CalculateDistance(point1, point2);
 
             Assert.AreEqual(expectedDistance, distance, 0.00000001);
+        }
+
+        [TestMethod]
+        public void TestCubeVolumeCalculation() 
+        {
+            var point1 = new Point(0, 0, 0);
+            var point2 = new Point(1, 1, 1);
+
+            var expectedDistance = 1.0;
+
+            var distance = Point.CalculateCubeVolume(point1, point2);
+
+            Assert.AreEqual(expectedDistance, distance, 0.00000001);
+        }
+
+        [TestMethod]
+        public void TestInRadiusCheck()
+        {
+            var point1 = new Point(0, 0, 0);
+            var point2 = new Point(1, 1, 1);
+            var radiusInRange = 2;
+            var radiusNotInRange = 0.5;
+
+            Assert.IsTrue(Point.IsInSphere(point1, point2, radiusInRange));
+
+            Assert.IsFalse(Point.IsInSphere(point1, point2, radiusNotInRange));
         }
     }
 }
