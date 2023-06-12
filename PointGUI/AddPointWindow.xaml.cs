@@ -46,7 +46,7 @@ namespace PointGUI
             e.Handled = !IsNumeric(e.Text);
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        private void AddButtonClick(object sender, RoutedEventArgs e)
         {
             if (Double.TryParse(XCoordinateTextBox.Text, out _) && Double.TryParse(YCoordinateTextBox.Text, out _) && 
                 Double.TryParse(ZCoordinateTextBox.Text, out _) && Int32.TryParse(IdTextBox.Text, out _))

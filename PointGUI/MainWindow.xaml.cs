@@ -39,9 +39,14 @@ namespace PointGUI
 
         private void CreateRepositoryClick(object sender, RoutedEventArgs e)
         {
-            _repository = new PointRepository(_connectionString, _repositoryName);
+            AddRepositoryWindow addRepositoryWindow = new AddRepositoryWindow();
 
-            
+            if (addRepositoryWindow.ShowDialog() == true)
+            {
+                _repository = addRepositoryWindow.PointRepository;
+
+                ReadRepository();
+            }
         }
 
         private void ReadRepositoryClick(object sender, RoutedEventArgs e)
@@ -54,10 +59,35 @@ namespace PointGUI
             AddPointWindow addPointWindow = new AddPointWindow();
             if (addPointWindow.ShowDialog() == true)
             {
-                Points.Add(addPointWindow.PointToAdd);
+                try
+                {
+                    _repository.Save(addPointWindow.PointToAdd);
+
+                    Points.Add(addPointWindow.PointToAdd);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
 
             PointListBox.Items.Refresh();
+        }
+
+        private void ReadRepository()
+        {
+            Points.Clear();
+
+            if (_repository is not null)
+            {
+                Points.AddRange(_repository.GetAll());
+            }
+        }
+
+        private void CalculateDistanceButtonClick(object sender, RoutedEventArgs e)
+        {
+            CalculateDistanceWindow calculateDistanceWindow = new CalculateDistanceWindow(Points); 
+            calculateDistanceWindow.ShowDialog();
         }
     }
 }

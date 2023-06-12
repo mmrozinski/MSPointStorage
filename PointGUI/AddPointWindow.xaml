@@ -11,7 +11,7 @@
         <TextBox x:Name="YCoordinateTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" PreviewTextInput="NumericTextInput" Margin="94,120,0,0" Width="50" HorizontalAlignment="Left"/>
         <TextBox x:Name="ZCoordinateTextBox" Margin="94,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" PreviewTextInput="NumericTextInput" Width="50" HorizontalAlignment="Left"/>
         <TextBox x:Name="IdTextBox" Margin="94,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" PreviewTextInput="NumericTextInput" Width="50" HorizontalAlignment="Left"/>
-        <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="53,190,0,0" VerticalAlignment="Top" IsDefault="True" Click="AddButton_Click" RenderTransformOrigin="-0.651,0.825"/>
+        <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="53,190,0,0" VerticalAlignment="Top" IsDefault="True" Click="AddButtonClick" RenderTransformOrigin="-0.651,0.825"/>
         <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="113,190,0,0" VerticalAlignment="Top" IsDefault="True" IsCancel="True"/>
         <Label x:Name="IdLabel" Content="Id" HorizontalAlignment="Left" Margin="60,41,0,0" VerticalAlignment="Top"/>
         <Label x:Name="XCoordinateLabel" Content="X" HorizontalAlignment="Left" Margin="62,93,0,0" VerticalAlignment="Top"/>
