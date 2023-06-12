@@ -20,5 +20,7 @@
         <Button x:Name="ReadRepositoryButton" Content="Read Repository" HorizontalAlignment="Left" Margin="360,111,0,0" VerticalAlignment="Top" Click="ReadRepositoryClick" />
         <Button x:Name="AddPointButton" Content="Add Point" HorizontalAlignment="Left" Margin="360,155,0,0" VerticalAlignment="Top" Click="AddPointClick" />
         <Button x:Name="CalculateDistanceButton" Content="Distance" HorizontalAlignment="Left" Margin="360,197,0,0" VerticalAlignment="Top" Click="CalculateDistanceButtonClick" />
+        <Button x:Name="CalculateVolumeButton" Content="Volume" HorizontalAlignment="Left" Margin="360,241,0,0" VerticalAlignment="Top" Click="CalculateVolumeButtonClick" />
+        <Button x:Name="IsInSphereCheckButton" Content="Is In Sphere" HorizontalAlignment="Left" Margin="360,241,0,0" VerticalAlignment="Top" Click="IsInSphereCheckButtonClick"/>
     </Grid>
 </Window>

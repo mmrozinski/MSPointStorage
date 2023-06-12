@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace PointGUI
 {
     /// <summary>
-    /// Interaction logic for CalculateDistanceWindow.xaml
+    /// Interaction logic for CalculateCubeVolumeWindow.xaml
     /// </summary>
-    public partial class CalculateDistanceWindow : Window
+    public partial class CalculateCubeVolumeWindow : Window
     {
-        public CalculateDistanceWindow(List<MSPointStorage.Point> points)
+        public CalculateCubeVolumeWindow(List<MSPointStorage.Point> points)
         {
             InitializeComponent();
 
@@ -31,9 +31,9 @@ namespace PointGUI
         {
             if (PointListBox1.SelectedItem is not null && PointListBox2.SelectedItem is not null)
             {
-                double distance = MSPointStorage.Point.CalculateDistance((MSPointStorage.Point)PointListBox1.SelectedItem, (MSPointStorage.Point)PointListBox2.SelectedItem);
+                double volume = MSPointStorage.Point.CalculateCubeVolume((MSPointStorage.Point) PointListBox1.SelectedItem, (MSPointStorage.Point) PointListBox2.SelectedItem);
 
-                MessageBox.Show(distance.ToString());
+                MessageBox.Show(volume.ToString());
             }
             else
             {
