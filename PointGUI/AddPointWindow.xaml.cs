@@ -37,7 +37,7 @@ namespace PointGUI
 
         private static bool IsNumeric(string text)
         {
-            Regex regex = new("^[0-9]+$");
+            Regex regex = new("[0-9.]");
             return regex.IsMatch(text);
         }
 

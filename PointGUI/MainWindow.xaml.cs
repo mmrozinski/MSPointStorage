@@ -89,5 +89,17 @@ namespace PointGUI
             CalculateDistanceWindow calculateDistanceWindow = new CalculateDistanceWindow(Points); 
             calculateDistanceWindow.ShowDialog();
         }
+
+        private void CalculateVolumeButtonClick(object sender, RoutedEventArgs e)
+        {
+            CalculateCubeVolumeWindow calculateCubeVolumeWindow = new CalculateCubeVolumeWindow(Points);
+            calculateCubeVolumeWindow.ShowDialog();
+        }
+
+        private void IsInSphereCheckButtonClick(object sender, RoutedEventArgs e)
+        {
+            IsInSphereWindow isInSphereWindow = new IsInSphereWindow(Points);
+            isInSphereWindow.ShowDialog();
+        }
     }
 }
