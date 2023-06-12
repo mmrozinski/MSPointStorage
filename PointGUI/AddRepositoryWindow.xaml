@@ -1,0 +1,32 @@
+﻿<Window x:Class="PointGUI.AddRepositoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PointGUI"
+        mc:Ignorable="d"
+        Title="AddRepositoryWindow" Height="306" Width="647"
+    xmlns:System="clr-namespace:System;assembly=System.Runtime">
+    <Window.Resources>
+        <System:String x:Key="DefaultConnectionString">Data Source=192.168.243.101;Initial Catalog=master;Persist Security Info=True;User ID=SA;Password=yourStrong(!)Password</System:String>
+        <System:String x:Key="DefaultRepositoryName">Points</System:String>
+    </Window.Resources>
+    <Grid>
+        <TextBox x:Name="ConnectionStringTextBox" HorizontalAlignment="Center" Margin="0,69,0,0" TextWrapping="Wrap" Text="{DynamicResource DefaultConnectionString}" VerticalAlignment="Top" Width="522" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.001"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="NameTextBox" HorizontalAlignment="Center" Margin="0,135,0,0" TextWrapping="Wrap" Text="{DynamicResource DefaultRepositoryName}" VerticalAlignment="Top" Width="181"/>
+        <Grid Margin="216,206,215,10">
+            <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="45" IsDefault="True" Click="SaveButtonClick"/>
+            <Button x:Name="CancelButton" Content="Cancel" Margin="0,0,10,0" VerticalAlignment="Center" IsCancel="True" HorizontalAlignment="Right" Width="45"/>
+        </Grid>
+
+    </Grid>
+</Window>

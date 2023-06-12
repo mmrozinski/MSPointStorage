@@ -1,0 +1,24 @@
+﻿<Window x:Name="window" x:Class="PointGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PointGUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="PointListBox" Margin="0,0,489,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="CreateRepositoryButton" Content="Create Repository" HorizontalAlignment="Left" Margin="360,70,0,0" VerticalAlignment="Top" Click="CreateRepositoryClick"/>
+        <Button x:Name="ReadRepositoryButton" Content="Read Repository" HorizontalAlignment="Left" Margin="360,111,0,0" VerticalAlignment="Top" Click="ReadRepositoryClick" />
+        <Button x:Name="AddPointButton" Content="Add Point" HorizontalAlignment="Left" Margin="360,155,0,0" VerticalAlignment="Top" Click="AddPointClick" />
+        <Button x:Name="CalculateDistanceButton" Content="Distance" HorizontalAlignment="Left" Margin="360,197,0,0" VerticalAlignment="Top" Click="CalculateDistanceButtonClick" />
+    </Grid>
+</Window>

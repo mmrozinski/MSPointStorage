@@ -25,6 +25,8 @@ namespace MSPointStorage
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
+            builder.Append(Id);
+            builder.Append(':');
             builder.Append(X);
             builder.Append(',');
             builder.Append(Y);

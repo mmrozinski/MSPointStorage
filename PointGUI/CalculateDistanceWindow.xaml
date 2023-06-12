@@ -1,0 +1,31 @@
+﻿<Window x:Class="PointGUI.CalculateDistanceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PointGUI"
+        mc:Ignorable="d"
+        Title="CalculateDistanceWindow" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="PointListBox1" Margin="0,0,489,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="PointListBox2" Margin="489,0,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="CalculateButton" Content="Calculate Distance" HorizontalAlignment="Center" VerticalAlignment="Center" IsDefault="True" Click="CalculateButtonClick"/>
+        <Button x:Name="CancelButton" Content="Close" HorizontalAlignment="Center" Margin="0,0,0,40" IsCancel="True" Height="20" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>
