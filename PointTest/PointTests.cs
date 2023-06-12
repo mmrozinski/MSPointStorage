@@ -72,5 +72,18 @@ namespace PointTests
 
             Assert.AreEqual(expectedDistance, distance, 0.00000001);
         }
+
+        [TestMethod]
+        public void TestInRadiusCheck()
+        {
+            var point1 = new Point(0, 0, 0);
+            var point2 = new Point(1, 1, 1);
+            var radiusInRange = 2;
+            var radiusNotInRange = 0.5;
+
+            Assert.IsTrue(Point.IsInSphere(point1, point2, radiusInRange));
+
+            Assert.IsFalse(Point.IsInSphere(point1, point2, radiusNotInRange));
+        }
     }
 }

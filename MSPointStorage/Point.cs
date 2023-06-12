@@ -44,5 +44,10 @@ namespace MSPointStorage
         {
             return Math.Abs(vertex1.X - vertex2.X) * Math.Abs(vertex1.Y - vertex2.Y) * Math.Abs(vertex1.Z - vertex2.Z);
         }
+
+        public static bool IsInSphere(Point point, Point center, double radius)
+        {
+            return Point.CalculateDistance(point, center) <= radius;
+        }
     }
 }
