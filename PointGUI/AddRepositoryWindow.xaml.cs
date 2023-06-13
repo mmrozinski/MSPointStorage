@@ -20,8 +20,8 @@ namespace PointGUI
     /// </summary>
     public partial class AddRepositoryWindow : Window
     {
-        private PointRepository _repository;
-        public PointRepository PointRepository { 
+        private PointRepository? _repository;
+        public PointRepository? PointRepository { 
             get
             {
                 return _repository;

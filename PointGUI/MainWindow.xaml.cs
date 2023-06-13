@@ -20,7 +20,7 @@ namespace PointGUI
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {   
+    {
         public List<MSPointStorage.Point> Points = new List<MSPointStorage.Point>();
 
         private PointRepository? _repository;
@@ -51,6 +51,12 @@ namespace PointGUI
 
         private void AddPointClick(object sender, RoutedEventArgs e)
         {
+            if (_repository is null)
+            {
+                MessageBox.Show("Select a repository first!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             AddPointWindow addPointWindow = new AddPointWindow();
             if (addPointWindow.ShowDialog() == true)
             {
@@ -83,7 +89,7 @@ namespace PointGUI
 
         private void CalculateDistanceButtonClick(object sender, RoutedEventArgs e)
         {
-            CalculateDistanceWindow calculateDistanceWindow = new CalculateDistanceWindow(Points); 
+            CalculateDistanceWindow calculateDistanceWindow = new CalculateDistanceWindow(Points);
             calculateDistanceWindow.ShowDialog();
         }
 
@@ -101,7 +107,13 @@ namespace PointGUI
 
         private void EditPointButton_Click(object sender, RoutedEventArgs e)
         {
-            EditPointWindow editPointWindow = new EditPointWindow((MSPointStorage.Point) PointListBox.SelectedItem);
+            if (_repository is null)
+            {
+                MessageBox.Show("Select a repository first!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            EditPointWindow editPointWindow = new EditPointWindow((MSPointStorage.Point)PointListBox.SelectedItem);
             if (editPointWindow.ShowDialog() == true)
             {
                 try
@@ -121,12 +133,18 @@ namespace PointGUI
 
         private void DeletePointButton_Click(object sender, RoutedEventArgs e)
         {
+            if (_repository is null)
+            {
+                MessageBox.Show("Select a repository first!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if (PointListBox.SelectedItem is null)
             {
                 return;
             }
 
-            MSPointStorage.Point pointToDelete = (MSPointStorage.Point) PointListBox.SelectedItem;
+            MSPointStorage.Point pointToDelete = (MSPointStorage.Point)PointListBox.SelectedItem;
 
             _repository.Delete(pointToDelete);
 
