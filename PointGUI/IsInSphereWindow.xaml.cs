@@ -46,7 +46,7 @@ namespace PointGUI
                 bool isInSphere = MSPointStorage.Point.IsInSphere((MSPointStorage.Point) PointListBox1.SelectedItem, (MSPointStorage.Point) PointListBox2.SelectedItem, 
                     Double.Parse(RadiusTextBox.Text));
 
-                MessageBox.Show(isInSphere.ToString());
+                MessageBox.Show(isInSphere ? "Point is in sphere!" : "Point is NOT in sphere!");
             }
             else
             {

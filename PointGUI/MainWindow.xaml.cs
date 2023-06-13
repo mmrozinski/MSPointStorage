@@ -20,12 +20,7 @@ namespace PointGUI
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        private const string _connectionString = "Data Source=192.168.243.101;Initial Catalog=master;Persist Security Info=True;User ID=SA;Password=yourStrong(!)Password";
-        private const string _repositoryName = "Points";
-
-        
-
+    {   
         public List<MSPointStorage.Point> Points = new List<MSPointStorage.Point>();
 
         private PointRepository? _repository;
@@ -51,7 +46,7 @@ namespace PointGUI
 
         private void ReadRepositoryClick(object sender, RoutedEventArgs e)
         {
-            PointListBox.Items.Refresh();
+            ReadRepository();
         }
 
         private void AddPointClick(object sender, RoutedEventArgs e)
@@ -69,9 +64,9 @@ namespace PointGUI
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-            }
 
-            PointListBox.Items.Refresh();
+                ReadRepository();
+            }
         }
 
         private void ReadRepository()
@@ -82,6 +77,8 @@ namespace PointGUI
             {
                 Points.AddRange(_repository.GetAll());
             }
+
+            PointListBox.Items.Refresh();
         }
 
         private void CalculateDistanceButtonClick(object sender, RoutedEventArgs e)
@@ -100,6 +97,40 @@ namespace PointGUI
         {
             IsInSphereWindow isInSphereWindow = new IsInSphereWindow(Points);
             isInSphereWindow.ShowDialog();
+        }
+
+        private void EditPointButton_Click(object sender, RoutedEventArgs e)
+        {
+            EditPointWindow editPointWindow = new EditPointWindow((MSPointStorage.Point) PointListBox.SelectedItem);
+            if (editPointWindow.ShowDialog() == true)
+            {
+                try
+                {
+                    _repository.Update(editPointWindow.PointToEdit);
+
+                    Points.Add(editPointWindow.PointToEdit);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                ReadRepository();
+            }
+        }
+
+        private void DeletePointButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (PointListBox.SelectedItem is null)
+            {
+                return;
+            }
+
+            MSPointStorage.Point pointToDelete = (MSPointStorage.Point) PointListBox.SelectedItem;
+
+            _repository.Delete(pointToDelete);
+
+            ReadRepository();
         }
     }
 }
