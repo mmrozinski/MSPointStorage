@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointGUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600
+        " Width="800">
     <Grid>
         <ListBox x:Name="PointListBox" Margin="0,0,489,0">
             <ListBox.ItemTemplate>
@@ -16,13 +17,13 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="CreateRepositoryButton" Content="Create Repository" HorizontalAlignment="Left" Margin="360,70,0,0" VerticalAlignment="Top" Click="CreateRepositoryClick"/>
-        <Button x:Name="ReadRepositoryButton" Content="Read Repository" HorizontalAlignment="Left" Margin="360,111,0,0" VerticalAlignment="Top" Click="ReadRepositoryClick" />
-        <Button x:Name="AddPointButton" Content="Add Point" HorizontalAlignment="Left" Margin="360,155,0,0" VerticalAlignment="Top" Click="AddPointClick" />
-        <Button x:Name="CalculateDistanceButton" Content="Distance" HorizontalAlignment="Left" Margin="360,197,0,0" VerticalAlignment="Top" Click="CalculateDistanceButtonClick" />
-        <Button x:Name="CalculateVolumeButton" Content="Volume" HorizontalAlignment="Left" Margin="360,241,0,0" VerticalAlignment="Top" Click="CalculateVolumeButtonClick" />
-        <Button x:Name="IsInSphereCheckButton" Content="Is In Sphere" HorizontalAlignment="Left" Margin="360,241,0,0" VerticalAlignment="Top" Click="IsInSphereCheckButtonClick"/>
-        <Button x:Name="EditPointButton" Content="Edit Point" HorizontalAlignment="Left" Margin="360,279,0,0" VerticalAlignment="Top" Click="EditPointButton_Click" />
-        <Button x:Name="DeletePointButton" Content="Delete Point" HorizontalAlignment="Left" Margin="360,317,0,0" VerticalAlignment="Top" Click="DeletePointButton_Click" />
+        <Button x:Name="CreateRepositoryButton" Content="Add Repository" HorizontalAlignment="Left" Margin="433,10,0,0" VerticalAlignment="Top" Click="CreateRepositoryClick"/>
+        <Button x:Name="ReadRepositoryButton" Content="Refresh" HorizontalAlignment="Left" Margin="316,10,0,0" VerticalAlignment="Top" Click="ReadRepositoryClick" />
+        <Button x:Name="AddPointButton" Content="Add Point" HorizontalAlignment="Left" Margin="366,319,0,0" VerticalAlignment="Top" Click="AddPointClick" />
+        <Button x:Name="CalculateDistanceButton" Content="Distance" HorizontalAlignment="Left" Margin="642,332,0,0" VerticalAlignment="Top" Click="CalculateDistanceButtonClick" />
+        <Button x:Name="CalculateVolumeButton" Content="Volume" HorizontalAlignment="Left" Margin="642,376,0,0" VerticalAlignment="Top" Click="CalculateVolumeButtonClick" />
+        <Button x:Name="IsInSphereCheckButton" Content="Is In Sphere" HorizontalAlignment="Left" Margin="642,376,0,0" VerticalAlignment="Top" Click="IsInSphereCheckButtonClick"/>
+        <Button x:Name="EditPointButton" Content="Edit Point" HorizontalAlignment="Left" Margin="366,356,0,0" VerticalAlignment="Top" Click="EditPointButton_Click" />
+        <Button x:Name="DeletePointButton" Content="Delete Point" HorizontalAlignment="Center" Margin="0,391,0,0" VerticalAlignment="Top" Click="DeletePointButton_Click" />
     </Grid>
 </Window>

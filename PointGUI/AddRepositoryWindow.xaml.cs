@@ -43,8 +43,9 @@ namespace PointGUI
             {
                 try
                 {
+                    Mouse.SetCursor(Cursors.Wait);
                     _repository = new PointRepository(ConnectionStringTextBox.Text, NameTextBox.Text);
-
+                    
                     Window.GetWindow(this).DialogResult = true;
                     Window.GetWindow(this).Close();
                 }
@@ -52,6 +53,7 @@ namespace PointGUI
                 {
                     MessageBox.Show("Invalid connection string or name!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+                Mouse.SetCursor(Cursors.Arrow);
             }
         }
     }
