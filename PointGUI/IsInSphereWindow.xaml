@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointGUI"
         mc:Ignorable="d"
-        Title="IsInSphereWindow" Height="450" Width="800">
+        Title="IsInSphereWindow" Height="450" Width="800" WindowStartupLocation="CenterOwner" Topmost="True" MinWidth="800" MinHeight="450" MaxWidth="800">
     <Grid>
         <ListBox x:Name="PointListBox1" Margin="0,0,489,0">
             <ListBox.ItemTemplate>

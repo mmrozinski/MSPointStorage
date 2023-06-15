@@ -20,16 +20,18 @@ namespace PointGUI
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {   
+    {
         public List<MSPointStorage.Point> Points = new List<MSPointStorage.Point>();
+        public List<PointRepository> Repositories = new List<PointRepository>();
 
-        private PointRepository? _repository;
+        private PointRepository? _currentRepository;
 
         public MainWindow()
         {
             InitializeComponent();
 
             PointListBox.ItemsSource = Points;
+            RepositoryComboBox.ItemsSource = Repositories;
         }
 
         private void CreateRepositoryClick(object sender, RoutedEventArgs e)
@@ -38,9 +40,15 @@ namespace PointGUI
 
             if (addRepositoryWindow.ShowDialog() == true)
             {
-                _repository = addRepositoryWindow.PointRepository;
+                if (addRepositoryWindow.PointRepository is not null) 
+                {
+                    _currentRepository = addRepositoryWindow.PointRepository;
+                    Repositories.Add(addRepositoryWindow.PointRepository);
+                }
 
                 ReadRepository();
+                RepositoryComboBox.Items.Refresh();
+                RepositoryComboBox.SelectedItem = _currentRepository;
             }
         }
 
@@ -51,12 +59,18 @@ namespace PointGUI
 
         private void AddPointClick(object sender, RoutedEventArgs e)
         {
+            if (_currentRepository is null)
+            {
+                MessageBox.Show("Select a repository first!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             AddPointWindow addPointWindow = new AddPointWindow();
             if (addPointWindow.ShowDialog() == true)
             {
                 try
                 {
-                    _repository.Save(addPointWindow.PointToAdd);
+                    _currentRepository.Save(addPointWindow.PointToAdd);
 
                     Points.Add(addPointWindow.PointToAdd);
                 }
@@ -73,9 +87,9 @@ namespace PointGUI
         {
             Points.Clear();
 
-            if (_repository is not null)
+            if (_currentRepository is not null)
             {
-                Points.AddRange(_repository.GetAll());
+                Points.AddRange(_currentRepository.GetAll());
             }
 
             PointListBox.Items.Refresh();
@@ -83,7 +97,7 @@ namespace PointGUI
 
         private void CalculateDistanceButtonClick(object sender, RoutedEventArgs e)
         {
-            CalculateDistanceWindow calculateDistanceWindow = new CalculateDistanceWindow(Points); 
+            CalculateDistanceWindow calculateDistanceWindow = new CalculateDistanceWindow(Points);
             calculateDistanceWindow.ShowDialog();
         }
 
@@ -99,14 +113,26 @@ namespace PointGUI
             isInSphereWindow.ShowDialog();
         }
 
-        private void EditPointButton_Click(object sender, RoutedEventArgs e)
+        private void EditPointButtonClick(object sender, RoutedEventArgs e)
         {
-            EditPointWindow editPointWindow = new EditPointWindow((MSPointStorage.Point) PointListBox.SelectedItem);
+            if (_currentRepository is null)
+            {
+                MessageBox.Show("Select a repository first!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (PointListBox.SelectedItem is null)
+            {
+                MessageBox.Show("Select a point first!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            EditPointWindow editPointWindow = new EditPointWindow((MSPointStorage.Point)PointListBox.SelectedItem);
             if (editPointWindow.ShowDialog() == true)
             {
                 try
                 {
-                    _repository.Update(editPointWindow.PointToEdit);
+                    _currentRepository.Update(editPointWindow.PointToEdit);
 
                     Points.Add(editPointWindow.PointToEdit);
                 }
@@ -119,17 +145,50 @@ namespace PointGUI
             }
         }
 
-        private void DeletePointButton_Click(object sender, RoutedEventArgs e)
+        private void DeletePointButtonClick(object sender, RoutedEventArgs e)
         {
-            if (PointListBox.SelectedItem is null)
+            if (_currentRepository is null)
             {
+                MessageBox.Show("Select a repository first!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            MSPointStorage.Point pointToDelete = (MSPointStorage.Point) PointListBox.SelectedItem;
+            if (PointListBox.SelectedItem is null)
+            {
+                MessageBox.Show("Select a point first!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
-            _repository.Delete(pointToDelete);
+            MSPointStorage.Point pointToDelete = (MSPointStorage.Point)PointListBox.SelectedItem;
 
+            _currentRepository.Delete(pointToDelete);
+
+            ReadRepository();
+        }
+
+        private void RepositoryComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _currentRepository = (PointRepository)RepositoryComboBox.SelectedItem;
+
+            ReadRepository();
+        }
+
+        private void DeleteRepositoryClick(object sender, RoutedEventArgs e)
+        {
+            if (_currentRepository is null)
+            {
+                MessageBox.Show("Select a repository first!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            _currentRepository.DeleteRepository();
+
+            Repositories.Remove(_currentRepository);
+
+            _currentRepository = null;
+            RepositoryComboBox.SelectedItem = null;
+
+            RepositoryComboBox.Items.Refresh();
             ReadRepository();
         }
     }

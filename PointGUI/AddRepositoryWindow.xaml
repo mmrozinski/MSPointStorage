@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PointGUI"
         mc:Ignorable="d"
         Title="AddRepositoryWindow" Height="306" Width="647"
-    xmlns:System="clr-namespace:System;assembly=System.Runtime">
+    xmlns:System="clr-namespace:System;assembly=System.Runtime" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Topmost="True">
     <Window.Resources>
         <System:String x:Key="DefaultConnectionString">Data Source=localhost;Initial Catalog=master;Persist Security Info=True;User ID=SA;Password=yourStrong(!)Password;Connection Timeout=10</System:String>
         <System:String x:Key="DefaultRepositoryName">Points</System:String>

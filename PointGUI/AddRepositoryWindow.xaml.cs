@@ -20,8 +20,8 @@ namespace PointGUI
     /// </summary>
     public partial class AddRepositoryWindow : Window
     {
-        private PointRepository _repository;
-        public PointRepository PointRepository { 
+        private PointRepository? _repository;
+        public PointRepository? PointRepository { 
             get
             {
                 return _repository;
@@ -43,8 +43,9 @@ namespace PointGUI
             {
                 try
                 {
+                    Mouse.SetCursor(Cursors.Wait);
                     _repository = new PointRepository(ConnectionStringTextBox.Text, NameTextBox.Text);
-
+                    
                     Window.GetWindow(this).DialogResult = true;
                     Window.GetWindow(this).Close();
                 }
@@ -52,6 +53,7 @@ namespace PointGUI
                 {
                     MessageBox.Show("Invalid connection string or name!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+                Mouse.SetCursor(Cursors.Arrow);
             }
         }
     }

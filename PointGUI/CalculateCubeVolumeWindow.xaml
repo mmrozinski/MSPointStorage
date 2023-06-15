@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointGUI"
         mc:Ignorable="d"
-        Title="CalculateCubeVolumeWindow" Height="450" Width="800">
+        Title="CalculateCubeVolumeWindow" Height="450" Width="800" MinWidth="800" MinHeight="450" MaxWidth="800" Topmost="True" WindowStartupLocation="CenterOwner">
     <Grid>
         <ListBox x:Name="PointListBox1" Margin="0,0,489,0">
             <ListBox.ItemTemplate>

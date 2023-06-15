@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointGUI"
         mc:Ignorable="d"
-        Title="AddPointWindow" Height="263" Width="199">
+        Title="AddPointWindow" Height="263" Width="199" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterOwner">
     <Grid>
         <TextBox x:Name="XCoordinateTextBox" Margin="94,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" PreviewTextInput="NumericTextInput" Width="50" HorizontalAlignment="Left"/>
         <TextBox x:Name="YCoordinateTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" PreviewTextInput="NumericTextInput" Margin="94,120,0,0" Width="50" HorizontalAlignment="Left"/>
