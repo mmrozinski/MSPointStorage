@@ -67,7 +67,7 @@ namespace MSPointStorage
             {
                 connection.Open();
 
-                string query = "INSERT INTO Points (id, x, y, z) VALUES (@id, @x, @y, @z)";
+                string query = $"INSERT INTO {Name} (id, x, y, z) VALUES (@id, @x, @y, @z)";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -100,7 +100,7 @@ namespace MSPointStorage
             {
                 connection.Open();
 
-                string query = "INSERT INTO Points (id, x, y, z) VALUES (@id, @x, @y, @z)";
+                string query = $"INSERT INTO {Name} (id, x, y, z) VALUES (@id, @x, @y, @z)";
 
                 foreach (Point point in pointList)
                 {
@@ -136,7 +136,7 @@ namespace MSPointStorage
             {
                 connection.Open();
 
-                string query = "UPDATE Points SET x = @x, y = @y, z = @z WHERE id = @id";
+                string query = $"UPDATE {Name} SET x = @x, y = @y, z = @z WHERE id = @id";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
