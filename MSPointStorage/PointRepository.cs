@@ -53,6 +53,16 @@ namespace MSPointStorage
         /// <param name="point">The point to save.</param>
         public void Save(Point point)
         {
+            if (string.IsNullOrEmpty(ConnectionString) || string.IsNullOrEmpty(Name)) 
+            {
+                throw new Exception("Both the ConnectionString and the Name must be initialized first!");
+            }
+
+            if (point is null)
+            {
+                throw new ArgumentNullException();
+            }
+
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
@@ -76,6 +86,16 @@ namespace MSPointStorage
         /// <param name="pointList">The list of points to save.</param>
         public void Save(List<Point> pointList)
         {
+            if (string.IsNullOrEmpty(ConnectionString) || string.IsNullOrEmpty(Name))
+            {
+                throw new Exception("Both the ConnectionString and the Name must be initialized first!");
+            }
+
+            if (pointList is null)
+            {
+                throw new ArgumentNullException();
+            }
+
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
@@ -102,6 +122,16 @@ namespace MSPointStorage
         /// <param name="point">The point with an id parameter matching the id parameter of a point in the database and updated coordinates.</param>
         public void Update(Point point)
         {
+            if (string.IsNullOrEmpty(ConnectionString) || string.IsNullOrEmpty(Name))
+            {
+                throw new Exception("Both the ConnectionString and the Name must be initialized first!");
+            }
+
+            if (point is null)
+            {
+                throw new ArgumentNullException();
+            }
+
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
@@ -124,6 +154,11 @@ namespace MSPointStorage
         /// </summary>
         public void DeleteAll()
         {
+            if (string.IsNullOrEmpty(ConnectionString) || string.IsNullOrEmpty(Name))
+            {
+                throw new Exception("Both the ConnectionString and the Name must be initialized first!");
+            }
+
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
@@ -147,6 +182,16 @@ namespace MSPointStorage
         /// <param name="point">The point to remove.</param>
         public void Delete(Point point)
         {
+            if (string.IsNullOrEmpty(ConnectionString) || string.IsNullOrEmpty(Name))
+            {
+                throw new Exception("Both the ConnectionString and the Name must be initialized first!");
+            }
+
+            if (point is null)
+            {
+                throw new ArgumentNullException();
+            }
+
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
@@ -166,6 +211,11 @@ namespace MSPointStorage
         /// </summary>
         public void DeleteRepository()
         {
+            if (string.IsNullOrEmpty(ConnectionString) || string.IsNullOrEmpty(Name))
+            {
+                throw new Exception("Both the ConnectionString and the Name must be initialized first!");
+            }
+
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
@@ -186,6 +236,11 @@ namespace MSPointStorage
         /// <returns>If a matching id was found, a <see cref="Point"/> object with the coordinates and id obtained from the repository, otherwise <see langword="null"/></returns>
         public Point? GetById(int id)
         {
+            if (string.IsNullOrEmpty(ConnectionString) || string.IsNullOrEmpty(Name))
+            {
+                throw new Exception("Both the ConnectionString and the Name must be initialized first!");
+            }
+
             int foundId;
             double x, y, z;
             x = y = z = foundId = 0;
@@ -223,6 +278,11 @@ namespace MSPointStorage
         /// <returns>A <see cref="List{T}"/> of <see cref="Point"/> objects, containing all points saved in the <see cref="PointRepository"/></returns>
         public List<Point> GetAll()
         {
+            if (string.IsNullOrEmpty(ConnectionString) || string.IsNullOrEmpty(Name))
+            {
+                throw new Exception("Both the ConnectionString and the Name must be initialized first!");
+            }
+
             List<Point> points = new List<Point>();
 
             int foundId;

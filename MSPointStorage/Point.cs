@@ -68,6 +68,11 @@ namespace MSPointStorage
         /// <returns>The euclidean distance between <paramref name="origin"/> and <paramref name="destination"/></returns>
         public static double CalculateDistance(Point origin, Point destination)
         {
+            if (origin is null || destination is null)
+            {
+                throw new ArgumentNullException();
+            }
+
             return Math.Sqrt(Math.Pow(destination.X - origin.X, 2) + Math.Pow(destination.Y - origin.Y, 2) + Math.Pow(destination.Z - origin.Z, 2));
         }
 
@@ -79,6 +84,11 @@ namespace MSPointStorage
         /// <returns>The value of the cuboid's volume.</returns>
         public static double CalculateCubeVolume(Point vertex1, Point vertex2)
         {
+            if (vertex1 is null || vertex2 is null)
+            {
+                throw new ArgumentNullException();
+            }
+
             return Math.Abs(vertex1.X - vertex2.X) * Math.Abs(vertex1.Y - vertex2.Y) * Math.Abs(vertex1.Z - vertex2.Z);
         }
 
@@ -92,6 +102,15 @@ namespace MSPointStorage
         /// is less or equal to the <paramref name="radius"/>, <see langword="false"/> otherwise</returns>.
         public static bool IsInSphere(Point point, Point center, double radius)
         {
+            if (point is null || center is null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (radius < 0)
+            {
+                throw new ArgumentOutOfRangeException("Radius must be positive!");
+            }
+
             return Point.CalculateDistance(point, center) <= radius;
         }
     }
