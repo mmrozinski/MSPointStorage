@@ -12,7 +12,7 @@ namespace PointTest
     [TestClass]
     public class PointRepositoryTests
     {
-        private const string connectionString = "Data Source=192.168.243.101;Initial Catalog=master;Persist Security Info=True;User ID=SA;Password=yourStrong(!)Password";
+        private const string connectionString = "Data Source=localhost;Initial Catalog=master;Persist Security Info=True;User ID=SA;Password=yourStrong(!)Password;Connection Timeout=10";
 
         PointRepository repository;
 
