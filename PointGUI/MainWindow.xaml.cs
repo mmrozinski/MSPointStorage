@@ -32,6 +32,10 @@ namespace PointGUI
 
             PointListBox.ItemsSource = Points;
             RepositoryComboBox.ItemsSource = Repositories;
+
+            Points.Add(new MSPointStorage.Point(0, 0, 0, 1));
+            Points.Add(new MSPointStorage.Point(100, 100, 100, 2));
+            Points.Add(new MSPointStorage.Point(-100.11, -100.452, -100.4, 3));
         }
 
         private void CreateRepositoryClick(object sender, RoutedEventArgs e)
