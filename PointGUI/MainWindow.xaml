@@ -8,21 +8,22 @@
         Title="Point Test App" Height="600
         " Width="800" WindowStartupLocation="CenterScreen" MinWidth="800" MinHeight="600" MaxWidth="800">
     <Grid>
-        <ListBox x:Name="PointListBox" Margin="0,0,489,0">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ListView x:Name="PointListBox" Margin="0,0,489,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="X" DisplayMemberBinding="{Binding X}" />
+                    <GridViewColumn Header="Y" DisplayMemberBinding="{Binding Y}" />
+                    <GridViewColumn Header="Z" DisplayMemberBinding="{Binding Z}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Button x:Name="CreateRepositoryButton" Content="Add Repository" HorizontalAlignment="Left" Margin="433,10,0,0" VerticalAlignment="Top" Click="CreateRepositoryClick"/>
         <Button x:Name="ReadRepositoryButton" Content="Refresh" HorizontalAlignment="Left" Margin="327,10,0,0" VerticalAlignment="Top" Click="ReadRepositoryClick" />
         <Button x:Name="AddPointButton" Content="Add Point" HorizontalAlignment="Left" Margin="366,319,0,0" VerticalAlignment="Top" Click="AddPointClick" />
-        <Button x:Name="CalculateDistanceButton" Content="Distance" HorizontalAlignment="Left" Margin="642,332,0,0" VerticalAlignment="Top" Click="CalculateDistanceButtonClick" />
-        <Button x:Name="CalculateVolumeButton" Content="Volume" HorizontalAlignment="Left" Margin="642,376,0,0" VerticalAlignment="Top" Click="CalculateVolumeButtonClick" />
-        <Button x:Name="IsInSphereCheckButton" Content="Is In Sphere" HorizontalAlignment="Left" Margin="642,376,0,0" VerticalAlignment="Top" Click="IsInSphereCheckButtonClick"/>
+        <Button x:Name="CalculateDistanceButton" Content="Distance" HorizontalAlignment="Left" Margin="642,319,0,0" VerticalAlignment="Top" Click="CalculateDistanceButtonClick" />
+        <Button x:Name="CalculateVolumeButton" Content="Volume" HorizontalAlignment="Left" Margin="642,356,0,0" VerticalAlignment="Top" Click="CalculateVolumeButtonClick" />
+        <Button x:Name="IsInSphereCheckButton" Content="Is In Sphere" HorizontalAlignment="Left" Margin="642,391,0,0" VerticalAlignment="Top" Click="IsInSphereCheckButtonClick"/>
         <Button x:Name="EditPointButton" Content="Edit Point" HorizontalAlignment="Left" Margin="366,356,0,0" VerticalAlignment="Top" Click="EditPointButtonClick" />
         <Button x:Name="DeletePointButton" Content="Delete Point" HorizontalAlignment="Center" Margin="0,391,0,0" VerticalAlignment="Top" Click="DeletePointButtonClick" />
         <ComboBox x:Name="RepositoryComboBox" HorizontalAlignment="Left" Margin="547,10,0,0" VerticalAlignment="Top" Width="144" Height="20" DisplayMemberPath="Name" SelectionChanged="RepositoryComboBoxSelectionChanged"/>

@@ -7,15 +7,16 @@
         mc:Ignorable="d"
         Title="IsInSphereWindow" Height="450" Width="800" WindowStartupLocation="CenterOwner" Topmost="True" MinWidth="800" MinHeight="450" MaxWidth="800">
     <Grid>
-        <ListBox x:Name="PointListBox1" Margin="0,0,489,0">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ListView x:Name="PointListBox1" Margin="0,0,489,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="X" DisplayMemberBinding="{Binding X}" />
+                    <GridViewColumn Header="Y" DisplayMemberBinding="{Binding Y}" />
+                    <GridViewColumn Header="Z" DisplayMemberBinding="{Binding Z}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Button x:Name="CheckButton" Content="Check" HorizontalAlignment="Center" VerticalAlignment="Top" IsDefault="True" Click="CheckButtonClick" Margin="0,307,0,0"/>
         <Button x:Name="CancelButton" Content="Close" HorizontalAlignment="Center" Margin="0,374,0,0" IsCancel="True" Height="20" VerticalAlignment="Top"/>
         <TextBox x:Name="RadiusTextBox" Margin="405,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" PreviewTextInput="NumericTextInput" Width="79" HorizontalAlignment="Left" />
