@@ -1,18 +1,8 @@
 ﻿using MSPointStorage;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PointGUI
 {
@@ -32,10 +22,6 @@ namespace PointGUI
 
             PointListBox.ItemsSource = Points;
             RepositoryComboBox.ItemsSource = Repositories;
-
-            Points.Add(new MSPointStorage.Point(0, 0, 0, 1));
-            Points.Add(new MSPointStorage.Point(100, 100, 100, 2));
-            Points.Add(new MSPointStorage.Point(-100.11, -100.452, -100.4, 3));
         }
 
         private void CreateRepositoryClick(object sender, RoutedEventArgs e)
