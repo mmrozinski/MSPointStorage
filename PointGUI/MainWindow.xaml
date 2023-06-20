@@ -18,15 +18,30 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="CreateRepositoryButton" Content="Add Repository" HorizontalAlignment="Left" Margin="433,10,0,0" VerticalAlignment="Top" Click="CreateRepositoryClick"/>
-        <Button x:Name="ReadRepositoryButton" Content="Refresh" HorizontalAlignment="Left" Margin="327,10,0,0" VerticalAlignment="Top" Click="ReadRepositoryClick" />
-        <Button x:Name="AddPointButton" Content="Add Point" HorizontalAlignment="Left" Margin="366,319,0,0" VerticalAlignment="Top" Click="AddPointClick" />
-        <Button x:Name="CalculateDistanceButton" Content="Distance" HorizontalAlignment="Left" Margin="642,319,0,0" VerticalAlignment="Top" Click="CalculateDistanceButtonClick" />
-        <Button x:Name="CalculateVolumeButton" Content="Volume" HorizontalAlignment="Left" Margin="642,356,0,0" VerticalAlignment="Top" Click="CalculateVolumeButtonClick" />
-        <Button x:Name="IsInSphereCheckButton" Content="Is In Sphere" HorizontalAlignment="Left" Margin="642,391,0,0" VerticalAlignment="Top" Click="IsInSphereCheckButtonClick"/>
-        <Button x:Name="EditPointButton" Content="Edit Point" HorizontalAlignment="Left" Margin="366,356,0,0" VerticalAlignment="Top" Click="EditPointButtonClick" />
-        <Button x:Name="DeletePointButton" Content="Delete Point" HorizontalAlignment="Center" Margin="0,391,0,0" VerticalAlignment="Top" Click="DeletePointButtonClick" />
-        <ComboBox x:Name="RepositoryComboBox" HorizontalAlignment="Left" Margin="547,10,0,0" VerticalAlignment="Top" Width="144" Height="20" DisplayMemberPath="Name" SelectionChanged="RepositoryComboBoxSelectionChanged"/>
-        <Button x:Name="DeleteRepositoryButton" Content="Delete Repository" HorizontalAlignment="Left" Margin="593,50,0,0" VerticalAlignment="Top" Click="DeleteRepositoryClick"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="134" Margin="327,305,0,0" VerticalAlignment="Top" Width="98">
+            <Grid Margin="10,10,10,10">
+                <Button x:Name="AddPointButton" Content="Add Point" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Click="AddPointClick" />
+                <Button x:Name="EditPointButton" Content="Edit Point" HorizontalAlignment="Center" VerticalAlignment="Center" Click="EditPointButtonClick" />
+                <Button x:Name="DeletePointButton" Content="Delete Point" HorizontalAlignment="Center" Margin="0,82,0,0" VerticalAlignment="Top" Click="DeletePointButtonClick" />
+            </Grid>
+        </Border>
+        <Label Content="Point" HorizontalAlignment="Left" Margin="357,292,0,0" VerticalAlignment="Top" Background="White"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="134" Margin="619,305,0,0" VerticalAlignment="Top" Width="98">
+            <Grid Margin="10,10,10,10">
+                <Button x:Name="CalculateDistanceButton" Content="Distance" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Click="CalculateDistanceButtonClick" />
+                <Button x:Name="CalculateVolumeButton" Content="Volume" HorizontalAlignment="Center" VerticalAlignment="Center" Click="CalculateVolumeButtonClick" />
+                <Button x:Name="IsInSphereCheckButton" Content="Is In Sphere" HorizontalAlignment="Center" Margin="0,82,0,0" VerticalAlignment="Top" Click="IsInSphereCheckButtonClick"/>
+            </Grid>
+        </Border>
+        <Label Content="Calculation" HorizontalAlignment="Left" Margin="634,292,0,0" VerticalAlignment="Top" Background="White"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="88" Margin="316,0,0,0" VerticalAlignment="Top" Width="474">
+            <Grid Margin="10,10,10,10">
+                <Button x:Name="ReadRepositoryButton" Content="Refresh" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="ReadRepositoryClick" />
+                <Button x:Name="CreateRepositoryButton" Content="Add Repository" HorizontalAlignment="Left" Margin="208,10,0,0" VerticalAlignment="Top" Click="CreateRepositoryClick"/>
+                <ComboBox x:Name="RepositoryComboBox" HorizontalAlignment="Left" Margin="298,10,0,0" VerticalAlignment="Top" Width="144" Height="20" DisplayMemberPath="Name" SelectionChanged="RepositoryComboBoxSelectionChanged"/>
+                <Button x:Name="DeleteRepositoryButton" Content="Delete Repository" HorizontalAlignment="Left" Margin="196,36,0,0" VerticalAlignment="Top" Click="DeleteRepositoryClick"/>
+            </Grid>
+        </Border>
+        <Label Content="Repository" HorizontalAlignment="Left" Margin="520,70,0,0" VerticalAlignment="Top" Background="White"/>
     </Grid>
 </Window>
