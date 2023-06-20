@@ -29,5 +29,11 @@ namespace PointGUI
                 MessageBox.Show("Select two points!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void HelpButtonClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Select two points that are opposite vertices of a box to calculate its volume.",
+                "Help", MessageBoxButton.OK, MessageBoxImage.Question);
+        }
     }
 }

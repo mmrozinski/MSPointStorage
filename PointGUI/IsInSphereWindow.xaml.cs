@@ -44,5 +44,11 @@ namespace PointGUI
                 MessageBox.Show("Select two points and input a valid radius!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void HelpButtonClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Select a point on the left, the sphere's center point on the right and input the sphere's radius to check if the point is inside of the sphere.", 
+                "Help", MessageBoxButton.OK, MessageBoxImage.Question);
+        }
     }
 }
