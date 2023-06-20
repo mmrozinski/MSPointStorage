@@ -21,14 +21,15 @@
         <Button x:Name="CancelButton" Content="Close" HorizontalAlignment="Center" Margin="0,374,0,0" IsCancel="True" Height="20" VerticalAlignment="Top"/>
         <TextBox x:Name="RadiusTextBox" Margin="405,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" PreviewTextInput="NumericTextInput" Width="79" HorizontalAlignment="Left" />
         <Label x:Name="RadiusLabel" Content="Radius" HorizontalAlignment="Left" Margin="348,191,0,0" VerticalAlignment="Top" Width="52"/>
-        <ListBox x:Name="PointListBox2" Margin="489,0,0,0">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ListView x:Name="PointListBox2" Margin="489,0,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="X" DisplayMemberBinding="{Binding X}" />
+                    <GridViewColumn Header="Y" DisplayMemberBinding="{Binding Y}" />
+                    <GridViewColumn Header="Z" DisplayMemberBinding="{Binding Z}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
