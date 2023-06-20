@@ -22,7 +22,7 @@ namespace PointGUI
             {
                 double distance = MSPointStorage.Point.CalculateDistance((MSPointStorage.Point)PointListBox1.SelectedItem, (MSPointStorage.Point)PointListBox2.SelectedItem);
 
-                MessageBox.Show("Distance between the points equals " + distance.ToString());
+                ResultWindow.Show("Distance between the points equals ", distance.ToString());
             }
             else
             {

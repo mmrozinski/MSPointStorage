@@ -22,7 +22,7 @@ namespace PointGUI
             {
                 double volume = MSPointStorage.Point.CalculateCubeVolume((MSPointStorage.Point) PointListBox1.SelectedItem, (MSPointStorage.Point) PointListBox2.SelectedItem);
 
-                MessageBox.Show(volume.ToString());
+                ResultWindow.Show("The box's volume equals", volume.ToString());
             }
             else
             {
