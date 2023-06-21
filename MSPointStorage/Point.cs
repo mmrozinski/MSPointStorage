@@ -109,5 +109,34 @@ namespace MSPointStorage
 
             return Point.CalculateDistance(point, center) <= radius;
         }
+
+        /// <summary>
+        /// This static method checks whether a <paramref name="point"/> is inside a rectangular cuboid specified by its two opposite vertices.
+        /// </summary>
+        /// <param name="point">The point to check.</param>
+        /// <param name="vertex1">The first of the cuboid's opposite vertices.</param>
+        /// <param name="vertex2">The second of the cuboid's opposite vertices.</param>
+        /// <returns><see langword="true"/> if the <paramref name="point"/> is inside the specified cuboid, <see langword="false"/> otherwise</returns>.
+        public static bool IsInBox(Point point, Point vertex1, Point vertex2)
+        {
+            if (point is null || vertex1 is null || vertex2 is null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (point.X >= vertex1.X && point.X <= vertex2.X || point.X <= vertex1.X && point.X >= vertex2.X)
+            {
+                if (point.Y >= vertex1.Y && point.Y <= vertex2.Y || point.Y <= vertex1.Y && point.Y >= vertex2.Y)
+                {
+                    if (point.Z >= vertex1.Z && point.Z <= vertex2.Z || point.Z <= vertex1.Z && point.Z >= vertex2.Z)
+                    {
+                        return true;
+                    }
+                }
+            }
+            
+
+            return false;
+        }
     }
 }

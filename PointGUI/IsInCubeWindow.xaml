@@ -1,0 +1,46 @@
+﻿<Window x:Class="PointGUI.IsInCubeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PointGUI"
+        mc:Ignorable="d"
+        Title="IsInCubeWindow" Height="450" Width="1111">
+    <Grid>
+        <ListView x:Name="PointListBox1" HorizontalAlignment="Left" Width="311">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="X" DisplayMemberBinding="{Binding X}" />
+                    <GridViewColumn Header="Y" DisplayMemberBinding="{Binding Y}" />
+                    <GridViewColumn Header="Z" DisplayMemberBinding="{Binding Z}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="CheckButton" Content="Check" HorizontalAlignment="Left" VerticalAlignment="Center" IsDefault="True" Click="CheckButtonClick" Margin="382,0,0,0"/>
+        <Button x:Name="CancelButton" Content="Close" HorizontalAlignment="Left" Margin="384,374,0,0" IsCancel="True" Height="20" VerticalAlignment="Top"/>
+        <ListView x:Name="PointListBox2" Margin="489,0,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="X" DisplayMemberBinding="{Binding X}" />
+                    <GridViewColumn Header="Y" DisplayMemberBinding="{Binding Y}" />
+                    <GridViewColumn Header="Z" DisplayMemberBinding="{Binding Z}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="HelpButton" Content="?" HorizontalAlignment="Left" Margin="390,10,0,0" VerticalAlignment="Top" Width="20" Click="HelpButtonClick"/>
+        <Label Content="Point" HorizontalAlignment="Left" Margin="316,2,0,0" VerticalAlignment="Top"/>
+        <Label Content="Vertices" HorizontalAlignment="Left" Margin="433,2,0,0" VerticalAlignment="Top"/>
+        <ListView x:Name="PointListBox3" Margin="800,0,0,0" HorizontalAlignment="Left" Width="311">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="X" DisplayMemberBinding="{Binding X}" />
+                    <GridViewColumn Header="Y" DisplayMemberBinding="{Binding Y}" />
+                    <GridViewColumn Header="Z" DisplayMemberBinding="{Binding Z}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

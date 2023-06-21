@@ -81,5 +81,18 @@ namespace PointTests
 
             Assert.IsFalse(Point.IsInSphere(point1, point2, radiusNotInRange));
         }
+
+        [TestMethod]
+        public void TestInCubeCheck()
+        {
+            var point1 = new Point(0, 0, 0);
+            var point2 = new Point(1, 1, 1);
+            var pointInCube = new Point(0.5, 0.5, 0.5);
+            var pointNotInCube = new Point(-1, -1, -1);
+
+            Assert.IsTrue(Point.IsInBox(pointInCube, point1, point2));
+
+            Assert.IsFalse(Point.IsInBox(pointNotInCube, point1, point2));
+        }
     }
 }

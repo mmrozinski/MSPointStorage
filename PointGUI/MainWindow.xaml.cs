@@ -103,6 +103,12 @@ namespace PointGUI
             isInSphereWindow.ShowDialog();
         }
 
+        private void IsInBoxCheckButtonClick(object sender, RoutedEventArgs e)
+        {
+            IsInCubeWindow isInCubeWindow = new IsInCubeWindow(Points);
+            isInCubeWindow.ShowDialog();
+        }
+
         private void EditPointButtonClick(object sender, RoutedEventArgs e)
         {
             if (_currentRepository is null)
@@ -181,6 +187,5 @@ namespace PointGUI
             RepositoryComboBox.Items.Refresh();
             ReadRepository();
         }
-
     }
 }
